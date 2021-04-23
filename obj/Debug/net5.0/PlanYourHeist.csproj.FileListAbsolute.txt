@@ -1,0 +1,15 @@
+/Users/johndouglasprice/workspace/PlanYourHeist/obj/Debug/net5.0/PlanYourHeist.csprojAssemblyReference.cache
+/Users/johndouglasprice/workspace/PlanYourHeist/obj/Debug/net5.0/PlanYourHeist.GeneratedMSBuildEditorConfig.editorconfig
+/Users/johndouglasprice/workspace/PlanYourHeist/obj/Debug/net5.0/PlanYourHeist.AssemblyInfoInputs.cache
+/Users/johndouglasprice/workspace/PlanYourHeist/obj/Debug/net5.0/PlanYourHeist.AssemblyInfo.cs
+/Users/johndouglasprice/workspace/PlanYourHeist/obj/Debug/net5.0/PlanYourHeist.csproj.CoreCompileInputs.cache
+/Users/johndouglasprice/workspace/PlanYourHeist/bin/Debug/net5.0/PlanYourHeist.deps.json
+/Users/johndouglasprice/workspace/PlanYourHeist/bin/Debug/net5.0/PlanYourHeist.runtimeconfig.json
+/Users/johndouglasprice/workspace/PlanYourHeist/bin/Debug/net5.0/PlanYourHeist.runtimeconfig.dev.json
+/Users/johndouglasprice/workspace/PlanYourHeist/bin/Debug/net5.0/PlanYourHeist.dll
+/Users/johndouglasprice/workspace/PlanYourHeist/bin/Debug/net5.0/ref/PlanYourHeist.dll
+/Users/johndouglasprice/workspace/PlanYourHeist/bin/Debug/net5.0/PlanYourHeist.pdb
+/Users/johndouglasprice/workspace/PlanYourHeist/obj/Debug/net5.0/PlanYourHeist.dll
+/Users/johndouglasprice/workspace/PlanYourHeist/obj/Debug/net5.0/ref/PlanYourHeist.dll
+/Users/johndouglasprice/workspace/PlanYourHeist/obj/Debug/net5.0/PlanYourHeist.pdb
+/Users/johndouglasprice/workspace/PlanYourHeist/obj/Debug/net5.0/PlanYourHeist.genruntimeconfig.cache
