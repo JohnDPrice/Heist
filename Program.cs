@@ -82,81 +82,61 @@ namespace PlanYourHeist
                         PercentageCut = percentageCut
                     });
                 }
+
+                // Prompt for next team member's name
+                Console.WriteLine("Name: ");
+                name = Console.ReadLine();
             }
 
-            // Team Members
-            List<TeamMember> team = new List<TeamMember>();
+            // Random number generator
+            Random generator = new Random();
+            int zeroToHundred = generator.Next(0, 100);
+            int cash = generator.Next(50000, 1000000);
 
-            //Prompt user for bank difficulty
-            Console.Write("Bank Difficulty: ");
-            int bankDifficulty = int.Parse(Console.ReadLine());
+            Bank bank = new Bank() {
+                AlarmScore = generator.Next(0, 100),
+                VaultScore = generator.Next(0, 100),
+                SecurityGuardScore = generator.Next(0, 100),
+                CashOnHand = cash
+            };
+
+             //var x = bank.GetType().GetProperties().Select(a => a.Name).Skip(1).Take(3).ToList();
+             
+            // var q = bank[$"{x[0]}"];
+           // List<KeyValuePair<string, int>> bankProperties = bank.Select(x => new KeyValuePair<string, int>(){
+           //     x[x.Key]
+           // });
+
             Console.WriteLine();
-
-            // Run this code while name input is not empty
-            // while (name != "")
-            // {
-            //     // Prompt user for team member courage factor
-            //     Console.Write("Courage factor: ");
-            //     string courageFactor = Console.ReadLine();
-
-            //     // Create a single team member
-            //     TeamMember member = new TeamMember();
-            //     member.Name = name;
-            //     member.SkillLevel = int.Parse(skillLevel);
-            //     member.CourageFactor = double.Parse(courageFactor);
-
-            //     // Add team member to team List
-            //     team.Add(member);
-
-            //     Console.WriteLine();
-
-            //     // Prompt user to enter next team member's name
-            //     Console.Write("Name> ");
-            //     name = Console.ReadLine();
-            // }
-
-            Console.WriteLine($"Team Size: {team.Count}");
-
-            // Prompt user for number of trial runs
-            Console.WriteLine();
-            Console.WriteLine("Enter number of trial runs:");
-            int trialRunCount = int.Parse(Console.ReadLine());
-            Console.WriteLine();
-
-            int teamSkill = 0;
-
-            // Add each team member's skill level to get the total team skill level
-            foreach (TeamMember member in team)
+            // Recon Report
+            if (bank.AlarmScore > bank.VaultScore && bank.AlarmScore > bank.SecurityGuardScore)
             {
-                teamSkill += member.SkillLevel;
+                Console.WriteLine("Most Secure: Alarm System");
+
+            } else if (bank.VaultScore > bank.AlarmScore && bank.VaultScore > bank.SecurityGuardScore)
+            {
+                Console.WriteLine("Most Secure: Vault");
+
+            } else if (bank.SecurityGuardScore > bank.VaultScore && bank.SecurityGuardScore > bank.AlarmScore)
+            {
+                Console.WriteLine("Most Secure: Security Guards");
+            }
+
+            if (bank.AlarmScore < bank.VaultScore && bank.AlarmScore < bank.SecurityGuardScore)
+            {
+                Console.WriteLine("Least Secure: Alarm System");
+
+            } else if (bank.VaultScore < bank.AlarmScore && bank.VaultScore < bank.SecurityGuardScore)
+            {
+                Console.WriteLine("Least Secure: Vault");
+
+            } else if (bank.SecurityGuardScore < bank.VaultScore && bank.SecurityGuardScore < bank.AlarmScore)
+            {
+                Console.WriteLine("Least Secure: Security Guards");
             }
 
             // Get heist report
             HeistReport report = new HeistReport();
-
-            for (int i = 0; i < trialRunCount; i++)
-            {
-                // Create a random number between -10 and 10 for the heist's luck value. Add this number to the bank's difficulty level.
-                Random generator = new Random();
-                int luckValue = generator.Next(-10, 11);
-                int trialRunBankDifficulty = bankDifficulty + luckValue;
-
-                // Display team's combined skill level and the bank's difficulty level
-                Console.WriteLine($"Team Skill Level: {teamSkill}");
-                Console.WriteLine($"Bank Difficulty Level: {trialRunBankDifficulty}");
-
-                // If bank difficulty is greater than the team skill add to failure count in heist report, else add to success count.
-                if (trialRunBankDifficulty > teamSkill)
-                {
-                    report.FailureCount++;
-                }
-                else
-                {
-                    report.SuccessCount++;
-                }
-
-                Console.WriteLine("---------------------------");
-            }
 
             Console.WriteLine();
             Console.WriteLine("Heist Results:");
